@@ -59,7 +59,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                     maxLength: 6,
                     decoration: InputDecoration(
                       labelText: "6-Digit OTP",
-                      counterText: ""
+                      counterText: "" // to hide the counter
                     ),
                   ),
 

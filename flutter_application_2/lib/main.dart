@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_application_2/screens/email_auth/login_screen.dart';
 import 'package:flutter_application_2/screens/home_screen.dart';
+import 'package:flutter_application_2/screens/phone_auth/sign_in_with_phone.dart';
 
 import 'firebase_options.dart';
 
@@ -24,9 +25,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // this will open my code to home page is i already loged in or open login page
-      home: (FirebaseAuth.instance.currentUser != null) ? HomeScreen() : LoginScreen(),
+      home: (FirebaseAuth.instance.currentUser != null) ? HomeScreen() : SignInWithPhone(),
       //home: LoginScreen(),
     );
   }
 }
 
+
+
+// correct cmd to get sha id .\gradlew signingReport
