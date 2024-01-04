@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ageController.clear();
 
     if(name != "" && email != "" && profilepic != null) {
-      
+
       UploadTask uploadTask = FirebaseStorage.instance.ref().child("profilepictures").child(Uuid().v1()).putFile(profilepic!);
 
       StreamSubscription taskSubscription = uploadTask.snapshotEvents.listen((snapshot) {
@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Map<String, dynamic> userData = {
         "name": name,
         "email": email,
-        "age": age,
+         "age": age,
         "profilepic": downloadUrl,
         "samplearray": [name, email, age]
       };
@@ -221,6 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                             Map<String, dynamic> userMap = snapshot.data!.docs[index].data() as Map<String, dynamic>;
 
+                            // to show the output in profile
                             return ListTile(
                               leading: CircleAvatar(
                                 backgroundImage: NetworkImage(userMap["profilepic"]),
