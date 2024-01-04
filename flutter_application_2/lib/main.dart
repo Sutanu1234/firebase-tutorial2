@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -14,6 +17,28 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // to fetch all data from firestore
+  // QuerySnapshot snapshot = await FirebaseFirestore.instance.collection("user").get();
+  
+  // for(var doc in snapshot.docs){
+  //   log(doc.data().toString());
+  // }
+
+
+  //to add a user id to firestore 
+
+  // Map<String, dynamic> newUser = {
+  //   "name": "sb",
+  //   "email": "sb@gmail.com"
+  // };
+  
+  // to set a rendom id
+  //await FirebaseFirestore.instance.collection("user").add(newUser);
+  // for own id
+  //await FirebaseFirestore.instance.collection("user").doc("my-new-id").set(newUser);
+
+
   runApp(const MyApp());
 }
 
